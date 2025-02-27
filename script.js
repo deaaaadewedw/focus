@@ -5,7 +5,7 @@ function updateTime() {
   const hours = now.getHours().toString().padStart(2, '0');
   const minutes = now.getMinutes().toString().padStart(2, '0');
   const seconds = now.getSeconds().toString().padStart(2, '0');
-  h1.textContent = `${hours}:${minutes}:${seconds}`;
+  h1.textContent = `${hours}:${minutes}`;
 }
 
 setInterval(updateTime, 1000);
@@ -30,7 +30,7 @@ function updateStopwatch() {
   const minutes = Math.floor((elapsed % 3600000) / 60000);
   const seconds = Math.floor((elapsed % 60000) / 1000);
   const milliseconds = elapsed % 1000;
-  h4.innerHTML = `${hours > 0 ? hours + ':' : ''}${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}:<span style="font-size: 0.8em; vertical-align: bottom;">${milliseconds.toString().padStart(3, '0')}</span>`;
+  h4.innerHTML = `${hours > 0 ? hours + ':' : ''}${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 }
 
 document.addEventListener('keydown', (event) => {
